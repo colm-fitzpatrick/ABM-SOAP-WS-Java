@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from XMLParseServiceImplService WSDL service -->
+
+  <service name="XMLParseServiceImpl" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://services.soap"/>
+      <parameter name="wsdlServiceElement" value="XMLParseServiceImplService"/>
+      <parameter name="schemaQualified" value="http://services.soap"/>
+      <parameter name="wsdlServicePort" value="XMLParseServiceImpl"/>
+      <parameter name="className" value="soap.services.XMLParseServiceImpl"/>
+      <parameter name="wsdlPortType" value="XMLParseServiceImpl"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://services.soap" xmlns:retNS="http://services.soap" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="runInvalidCommand" qname="operNS:runInvalidCommand" returnQName="retNS:runInvalidCommandReturn" returnType="rtns:int" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://services.soap" xmlns:retNS="http://services.soap" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="runValid" qname="operNS:runValid" returnQName="retNS:runValidReturn" returnType="rtns:int" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://services.soap" xmlns:retNS="http://services.soap" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="runInvalidSiteID" qname="operNS:runInvalidSiteID" returnQName="retNS:runInvalidSiteIDReturn" returnType="rtns:int" soapAction="">
+      </operation>
+      <parameter name="allowedMethods" value="runInvalidCommand runValid runInvalidSiteID"/>
+
+  </service>
+</deployment>

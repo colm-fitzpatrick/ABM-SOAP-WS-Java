@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://services.soap" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://services.soap" xmlns:intf="http://services.soap" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://services.soap" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="runInvalidCommand">
+    <complexType/>
+   </element>
+   <element name="runInvalidCommandResponse">
+    <complexType>
+     <sequence>
+      <element name="runInvalidCommandReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="runValid">
+    <complexType/>
+   </element>
+   <element name="runValidResponse">
+    <complexType>
+     <sequence>
+      <element name="runValidReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="runInvalidSiteID">
+    <complexType/>
+   </element>
+   <element name="runInvalidSiteIDResponse">
+    <complexType>
+     <sequence>
+      <element name="runInvalidSiteIDReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="runInvalidSiteIDRequest">
+
+      <wsdl:part element="impl:runInvalidSiteID" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="runValidResponse">
+
+      <wsdl:part element="impl:runValidResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="runInvalidCommandRequest">
+
+      <wsdl:part element="impl:runInvalidCommand" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="runInvalidCommandResponse">
+
+      <wsdl:part element="impl:runInvalidCommandResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="runInvalidSiteIDResponse">
+
+      <wsdl:part element="impl:runInvalidSiteIDResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="runValidRequest">
+
+      <wsdl:part element="impl:runValid" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="XMLParseServiceImpl">
+
+      <wsdl:operation name="runInvalidCommand">
+
+         <wsdl:input message="impl:runInvalidCommandRequest" name="runInvalidCommandRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:runInvalidCommandResponse" name="runInvalidCommandResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="runValid">
+
+         <wsdl:input message="impl:runValidRequest" name="runValidRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:runValidResponse" name="runValidResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="runInvalidSiteID">
+
+         <wsdl:input message="impl:runInvalidSiteIDRequest" name="runInvalidSiteIDRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:runInvalidSiteIDResponse" name="runInvalidSiteIDResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="XMLParseServiceImplSoapBinding" type="impl:XMLParseServiceImpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="runInvalidCommand">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="runInvalidCommandRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="runInvalidCommandResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="runValid">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="runValidRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="runValidResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="runInvalidSiteID">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="runInvalidSiteIDRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="runInvalidSiteIDResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="XMLParseServiceImplService">
+
+      <wsdl:port binding="impl:XMLParseServiceImplSoapBinding" name="XMLParseServiceImpl">
+
+         <wsdlsoap:address location="http://localhost:8081/ABM-SOAP-WS-Java/services/XMLParseServiceImpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
