@@ -3,7 +3,7 @@ ABM developer technical question 3. SOAP web service using Java.
 
 # Requirements
 * HTTP web server(I used Apache Tomcat 8).
-* Web service testing application (I used SoapUI).
+* Web service testing application (I used SoapUI) **OR** Java IDE (I used Eclipse)
 
 # Deployment Instructions
 Please follow the proceeding instructions to deploy the SOAP web service.
@@ -25,11 +25,21 @@ http://localhost:8081/ABM-SOAP-WS-Java/services/XMLParseServiceImpl?wsdl
 ![ScreenShot](data/text-wsdl-soap.png)
 
 ## Step 3
-* To test the web service you will need to installed a web service testing application. I used SoapUI but there are many others available.
+* To test the web service you will need a web service testing application or a Java IDE with integrated HTTP web server (such as Tomcat). 
+### Web service testing application
+* I used SoapUI but there are many others available.
 * Download SoapUI Open Source : https://www.soapui.org/downloads/latest-release.html and follow installation instructions.
 * When you have installed and opened SoapUI, create a new SOAP project and enter http://localhost:8081/ABM-SOAP-WS-Java/services/XMLParseServiceImpl?wsdl into the Initial WSDL field.
 
 ![ScreenShot](data/soapui-create.PNG)
+
+### Java IDE
+* I used Eclipse but there are many others available.
+* To test the web service in Eclipse, import the ABM-SOAP-WS-Java.war file and enter ABM-SOAP-WS-Java-master for the project name.
+* Run the project as "Run on server" and add the resource onto the server.
+* You may be presented with the response below but this isn't a problem.
+
+![ScreenShot](data/eclipse-step1.PNG)
 
 ## Using the web service
 * For ease of use I have included three XML files, one valid, one with an invalid command and one with an invalid site id. These can be found in the ABM-SOAP-WS-Java-master\data folder.
