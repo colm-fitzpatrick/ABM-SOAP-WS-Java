@@ -36,6 +36,7 @@ http://localhost:8081/ABM-SOAP-WS-Java/services/XMLParseServiceImpl?wsdl
 ### Java IDE
 * I used Eclipse but there are many others available.
 * To test the web service in Eclipse, import the ABM-SOAP-WS-Java.war file and enter ABM-SOAP-WS-Java-master for the project name.
+* Copy the data folder from the downloaded ABM-SOAP-WS-Java-master directory to eclipse-workspace\ABM-SOAP-WS-Java-master.
 * Run the project as "Run on server" and add the resource onto the server.
 * You may be presented with the response below but this isn't a problem.
 
@@ -44,11 +45,22 @@ http://localhost:8081/ABM-SOAP-WS-Java/services/XMLParseServiceImpl?wsdl
 ## Using the web service
 * For ease of use I have included three XML files, one valid, one with an invalid command and one with an invalid site id. These can be found in the ABM-SOAP-WS-Java-master\data folder.
 
-### To test the valid XML file:
+### To test the valid XML file on SoapUI:
 
 ![ScreenShot](data/soapui-response.png)
 1. Expand the runValid method in the projects tab on the left of the screen and double clock on "Request 1".
 2. To run the request, click the green arrow in the top left of the Request 1 tab.
 3. View the web servers response. This should return 0 indicating the document was structured correctly.
-
 * These steps can be repeated to test the invalid command and invalid site id xml files.
+
+### To test the valid XML file on Eclipse:
+
+![ScreenShot](data/eclipse-step2.PNG)
+1. Under run select "Launch the Web Service Explorer".
+2. Press the WDSL page button on the top right of Web Service Explorer tab.
+3. Enter http://localhost:8081/ABM-SOAP-WS-Java/services/XMLParseServiceImpl?wsdl into WSDL URL field and clicking GO.
+4. Select the runValid method and press GO.
+5. View the web servers response. This should return 0 indicating the document was structured correctly.
+* These steps can be repeated to test the invalid command and invalid site id xml files.
+
+![ScreenShot](data/eclipse-step3.PNG)
